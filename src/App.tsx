@@ -1,17 +1,19 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
-import './App.css';
-import DetailPage from './components/DetailPage';
-import Main from './components/Main';
-import { BrowserRouter, Route } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import React from 'react'
+import './App.css'
+import DetailPage from './components/DetailPage'
+import Main from './components/Main'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <BrowserRouter>
-      <Route exact path="/" component={Main} />
-      <Route exact path="/details/:id" component={DetailPage} />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/details/:id' element={<DetailPage />} />
+      </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
